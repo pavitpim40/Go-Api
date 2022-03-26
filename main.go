@@ -15,7 +15,11 @@ func main(){
 		return c.String(http.StatusOK,"Hello, World!")
 	})
 	e.POST("/login", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, Response{})
+		return c.JSON(http.StatusOK, Response{
+			Token: "123456789",
+			Status : "success",
+		})
 	})
 	e.Logger.Fatal(e.Start(":1323"))
 }
+
