@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
+
 	"github.com/labstack/echo/v4"
 )
 
