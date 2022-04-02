@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/tidwall/gjson"
 
 	"github.com/labstack/echo/v4"
 )
@@ -31,6 +32,11 @@ func main(){
 		redis = ""
 		database = ""
 	)
+	const json = `{"name":{"first":"Janet","last":"Prichard"},"age":47}`
+	
+		value := gjson.Get(json, "name.last")
+		println(value.String())
+	
 	
 	fmt.Println("Go MySQL Tutorial")
     // Open up our database connection.
